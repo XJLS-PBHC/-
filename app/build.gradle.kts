@@ -23,26 +23,33 @@ android {
   }
 
   signingConfigs {
+    // Always keep the default Android debug signing config for debug builds.
+    getByName("debug")
+
+    // Only create a custom release keystore config when the environment is valid.
     val releaseKeystorePath = System.getenv("KEYSTORE_PATH")
-    if (!releaseKeystorePath.isNullOrBlank() && java.io.File(releaseKeystorePath).exists()) {
-      create("release") {
-        storeFile = file(releaseKeystorePath)
-        storePassword = System.getenv("STORE_PASSWORD")
-        keyAlias = System.getenv("KEY_ALIAS") ?: "upload"
-        keyPassword = System.getenv("KEY_PASSWORD")
+    if (!releaseKeystorePath.isNullOrBlank()) {
+      val keystoreFile = java.io.File(releaseKeystorePath)
+      if (keystoreFile.exists()) {
+        create("release") {
+          storeFile = keystoreFile
+          storePassword = System.getenv("STORE_PASSWORD")
+          keyAlias = System.getenv("KEY_ALIAS") ?: "upload"
+          keyPassword = System.getenv("KEY_PASSWORD")
+        }
       }
     }
   }
 
   buildTypes {
+    debug {
+      signingConfig = signingConfigs.getByName("debug")
+    }
     release {
       isCrunchPngs = false
       isMinifyEnabled = false
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
       signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
-    }
-    debug {
-      signingConfig = signingConfigs.getByName("debug")
     }
   }
   compileOptions {
