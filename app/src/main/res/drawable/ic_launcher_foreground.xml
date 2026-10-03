@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Medical Clipboard & Queue Card Silhouette -->
+    <!-- Base card -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,30 C32,26 35,23 39,23 L69,23 C73,23 76,26 76,30 L76,82 C76,86 73,89 69,89 L39,89 C35,89 32,86 32,82 Z" />
+    
+    <!-- Top Clip bar -->
+    <path
+        android:fillColor="#0D9488"
+        android:pathData="M44,20 C44,18 46,17 49,17 L59,17 C62,17 64,18 64,20 L64,26 L44,26 Z" />
+    
+    <!-- Red/Teal Medical Cross Badge inside card top -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M51,32 L57,32 L57,44 L51,44 Z" />
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M45,35 L63,35 L63,41 L45,41 Z" />
+
+    <!-- Queue List Items -->
+    <path
+        android:fillColor="#0D9488"
+        android:pathData="M40,50 L68,50 C69.1,50 70,50.9 70,52 C70,53.1 69.1,54 68,54 L40,54 C38.9,54 38,53.1 38,52 C38,50.9 38.9,50 40,50 Z" />
+    <path
+        android:fillColor="#14B8A6"
+        android:pathData="M40,58 L62,58 C63.1,58 64,58.9 64,60 C64,61.1 63.1,62 62,62 L40,62 C38.9,62 38,61.1 38,60 C38,58.9 38.9,58 40,58 Z" />
+    <path
+        android:fillColor="#99F6E4"
+        android:pathData="M40,66 L56,66 C57.1,66 58,66.9 58,68 C58,69.1 57.1,70 56,70 L40,70 C38.9,70 38,69.1 38,68 C38,66.9 38.9,66 40,66 Z" />
+
+    <!-- Circular Timer / Clock Accent at bottom right -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M68,68 m-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0" />
+    <!-- Clock hands (white) -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M68,68 L68,61 M68,68 L73,71" />
+</vector>
